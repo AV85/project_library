@@ -14,6 +14,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
+gem 'devise'
+gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
+gem 'cancancan'
+gem 'enumerize'
+gem 'ffaker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
