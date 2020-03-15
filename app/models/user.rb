@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   extend Enumerize
 
@@ -5,4 +7,5 @@ class User < ApplicationRecord
 
   devise :database_authenticatable
 
+  has_one_attached :avatar
 end

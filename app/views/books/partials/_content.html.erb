@@ -3,14 +3,25 @@
     <div class="col-lg-3 col-md-12">
       <div class="card">
         <div class="card-body">
-          Sidebar
+          <%= render 'books/partials/left_sidebar' %>
         </div>
       </div>
     </div>
     <div class="col-lg-9 col-md-12">
       <div class="card">
         <div class="card-body">
-          Content
+
+          <!-- Grid row -->
+          <div class="row">
+            <%- if @books.empty?%>
+              <h3> The books in this category NOT FOUND! </h3>
+            <%-else %>
+              <%= render partial: 'books/partials/card_item', collection: @books, as: :item %>
+            <% end %>
+
+          </div>
+          <!-- Grid row -->
+
         </div>
       </div>
     </div>

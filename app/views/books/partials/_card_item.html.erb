@@ -1,0 +1,41 @@
+<!-- Grid column -->
+<div class="col-lg-4 col-md-12">
+
+  <!--Card-->
+  <div class="card">
+
+    <!--Card image-->
+    <div class="view">
+      <%- if item.image.attached? %>
+        <%= image_tag item.image, class: "card-img-top"%>
+      <%- else %>
+        <%= image_tag 'no_img.png', class: 'card-img-top img-thumbnail' %>
+      <%end %>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+      <!--Title-->
+        <%- item.authors.each do |author| %>
+          <h6 class="grey-small-text"><%= fa_icon('pen-fancy')%> <%= author.first_name %> <%= author.last_name %></h6>
+        <% end %>
+      <h4 class="card-title"><%= link_to "#{item.name}", book_path(item) %></h4>
+      <!--Text-->
+      <p class="card-text grey-small-text"><%= item.description %></p>
+      <p class="card-text grey-small-text"><%= fa_icon('briefcase')%> <%= item.category.name %></p>
+      <p class="card-text grey-small-text"><%= fa_icon('clock')%> <%= item.updated_at %></p>
+    </div>
+
+  </div>
+  <!--/.Card-->
+
+</div>
+<!-- Grid column -->
+
+
+
+
+
+
+
+
